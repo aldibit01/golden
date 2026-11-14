@@ -429,9 +429,9 @@ p { margin: 0; }
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  /* `dvh` changes as iOS Safari shows/hides its toolbar, making the hero jump
-     during scroll. The small viewport unit is stable for the whole session. */
-  min-height: 100svh;
+  /* `dvh` changes as iOS Safari shows/hides its toolbar, making the hero jump.
+     Use the stable large viewport so the next section doesn't peek below it. */
+  min-height: 100lvh;
   display: flex;
   align-items: center;
   justify-content: center;
