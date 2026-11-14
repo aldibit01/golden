@@ -1056,7 +1056,32 @@ p { margin: 0; }
 /* ── Reviews Page ─────────────────────────────────────────────────────── */
 .reviews-page { background: var(--bg-deep); }
 
-.reviews-page .site-header { position: absolute; }
+.reviews-page .site-header {
+  position: absolute;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.reviews-page .brand { flex: 0 1 auto; }
+
+.reviews-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  color: var(--cream-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.reviews-back > span:first-child { color: var(--gold); font-size: 16px; }
+.reviews-back:hover { color: var(--gold-light); border-color: var(--gold-dim); background: rgba(201, 168, 110, 0.06); }
 
 .reviews-main {
   display: grid;
@@ -1065,18 +1090,20 @@ p { margin: 0; }
   min-height: 100svh;
   padding: calc(var(--safe-top) + var(--header-h) + var(--space-10)) var(--space-6) var(--space-10);
   background:
-    radial-gradient(ellipse at center, rgba(201, 168, 110, 0.06), transparent 60%),
+    radial-gradient(ellipse at 50% 42%, rgba(201, 168, 110, 0.11), transparent 58%),
     var(--bg-deep);
 }
 
 .reviews-card {
+  position: relative;
   width: 100%;
   max-width: 560px;
   padding: var(--space-12) var(--space-8);
   text-align: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #34302b, #26221f);
+  border: 1px solid var(--border-soft);
   border-radius: var(--radius-lg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.025);
 }
 
 .reviews-star {
@@ -1311,6 +1338,10 @@ p { margin: 0; }
   .map-icon { width: 36px; height: 36px; }
 
   .reviews-card { padding: var(--space-8) var(--space-5); }
+  .reviews-page .site-header { padding: 0 14px; }
+  .reviews-page .brand { gap: 7px; font-size: 9px; }
+  .reviews-page .brand-icon { flex-basis: 30px; width: 30px; height: 30px; }
+  .reviews-back { gap: 6px; padding: 9px 10px; font-size: 11px; }
 }
 
 /* ── Reduced Motion ───────────────────────────────────────────────────── */

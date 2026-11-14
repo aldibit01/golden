@@ -288,6 +288,7 @@ const translations = {
     navLocations: 'Филиалы',
     navMap: 'Карта',
     navContact: 'Контакты',
+    navReviews: 'Отзывы',
     navInstagram: 'Instagram',
     language: 'Язык',
     order: 'Заказать',
@@ -323,6 +324,7 @@ const translations = {
     navLocations: 'Филиалдар',
     navMap: 'Карта',
     navContact: 'Байланыс',
+    navReviews: 'Пікірлер',
     navInstagram: 'Instagram',
     language: 'Тіл',
     order: 'Тапсырыс беру',
@@ -358,6 +360,7 @@ const translations = {
     navLocations: 'Locations',
     navMap: 'Map',
     navContact: 'Contact',
+    navReviews: 'Reviews',
     navInstagram: 'Instagram',
     language: 'Language',
     order: 'Order',
@@ -400,7 +403,7 @@ const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
 let currentLanguage = 'ru';
-let activeCategory = 'macarons';
+let activeCategory = 'coffee';
 
 /* ──────── Rendering ──────── */
 
