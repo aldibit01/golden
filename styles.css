@@ -87,7 +87,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-height: 100dvh;
+  /* Keep the page's base geometry stable while Safari's browser chrome moves. */
+  min-height: 100svh;
   margin: 0;
   background: var(--bg-deep);
   color: var(--cream);
@@ -428,7 +429,9 @@ p { margin: 0; }
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  min-height: 100dvh;
+  /* `dvh` changes as iOS Safari shows/hides its toolbar, making the hero jump
+     during scroll. The small viewport unit is stable for the whole session. */
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1059,7 +1062,7 @@ p { margin: 0; }
   display: grid;
   place-items: center;
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
   padding: calc(var(--safe-top) + var(--header-h) + var(--space-10)) var(--space-6) var(--space-10);
   background:
     radial-gradient(ellipse at center, rgba(201, 168, 110, 0.06), transparent 60%),
