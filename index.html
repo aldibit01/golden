@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#120e0c">
+  <title>Golden Coffee — кофейня и кухня в Астане</title>
+  <meta name="description" content="Golden Coffee & Golden Canteen — кофе, блюда и уют в Астане. Два филиала: проспект Сарыарка 8/1 и проспект Абая 47.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Golden Coffee — Астана">
+  <meta property="og:description" content="Кофе, любимые блюда и минуты уюта — каждый день в Golden Coffee.">
+  <meta property="og:image" content="assets/og-cover.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/saryarka.webp" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <script src="app.js?v=14" defer></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Golden Coffee — на главную">
+        <img class="brand-icon" src="assets/icon.webp" alt="" width="34" height="34" decoding="async">
+        <span>GOLDEN<br><b>COFFEE</b></span>
+      </a>
+      <div class="header-actions">
+        <a class="header-order" href="https://wa.me/77028437803" target="_blank" rel="noopener noreferrer" data-i18n="order">Заказать</a>
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+    <div class="nav-inner">
+      <button class="nav-close" type="button" aria-label="Закрыть меню">✕</button>
+      <a href="#menu"><span class="nav-icon" aria-hidden="true">✧</span><span data-i18n="navMenu">Меню</span></a>
+      <a href="#locations"><span class="nav-icon" aria-hidden="true">⌖</span><span data-i18n="navLocations">Филиалы</span></a>
+      <a href="#map"><span class="nav-icon" aria-hidden="true">⌖</span><span data-i18n="navMap">Карта</span></a>
+      <a href="#contact"><span class="nav-icon phone-icon" aria-hidden="true">☎</span><span data-i18n="navContact">Контакты</span></a>
+      <div class="nav-divider"></div>
+      <a class="header-order" href="https://wa.me/77028437803" target="_blank" rel="noopener noreferrer" data-i18n="order">Заказать</a>
+      <div class="language-switch" role="group" aria-label="Выберите язык">
+        <button type="button" data-lang="kk" aria-pressed="false">ҚАЗ</button>
+        <button type="button" class="active" data-lang="ru" aria-pressed="true">РУС</button>
+        <button type="button" data-lang="en" aria-pressed="false">ENG</button>
+      </div>
+      <a class="instagram-link" href="https://www.instagram.com/goldencoffee.ast/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="assets/instagram.webp" alt="" width="40" height="40" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/saryarka.webp">
+          <img class="hero-bg" src="assets/saryarka.webp" alt="" width="640" height="1138" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="heroEyebrow">КОФЕЙНЯ · КУХНЯ · АСТАНА</p>
+        <h1 id="hero-title" data-i18n-html="heroTitle">Кофе для тех,<br><em>кто понимает.</em></h1>
+        <p class="hero-copy" data-i18n="heroText">Два филиала в Астане. Зайдёшь за латте — останешься на десерт.</p>
+        <div class="hero-buttons">
+          <a class="button button-gold" href="#menu"><span data-i18n="viewMenu">Смотреть меню</span></a>
+          <a class="button button-outline" href="#locations" data-i18n="ourLocations">Наши филиалы</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section section-wrap" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="menuEyebrow">ИЗУЧИТЕ НАШЕ</p>
+          <h2 id="menu-title" data-i18n="menuTitle">Меню</h2>
+        </div>
+      </div>
+      <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Категории меню"></div>
+      <div class="menu-grid" id="menu-grid" role="tabpanel" aria-live="polite"></div>
+      <noscript><p class="menu-footnote">Для просмотра меню включите JavaScript.</p></noscript>
+    </section>
+
+    <section class="locations-section" id="locations" aria-labelledby="locations-title">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="locationsEyebrow">БУДЕМ РАДЫ ВАС ВИДЕТЬ</p>
+            <h2 id="locations-title" data-i18n="locationsTitle">Наши филиалы</h2>
+          </div>
+        </div>
+        <div class="location-grid" id="location-grid"></div>
+        <noscript>
+          <p class="menu-footnote">
+            Проспект Сарыарка 8/1 · 07:00–24:00<br>
+            Проспект Абая 47 · 07:00–20:00
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+    <div class="map-modal" id="map-modal" aria-hidden="true">
+      <button class="map-backdrop" type="button" data-close aria-label="Закрыть окно"></button>
+      <div class="map-card" role="dialog" aria-modal="true" aria-labelledby="map-modal-title">
+        <button class="map-close" type="button" data-close aria-label="Закрыть">✕</button>
+        <p class="eyebrow" data-i18n="mapEyebrow">НАЙДИТЕ НАС</p>
+        <h2 id="map-modal-title" data-i18n="mapTitle">Мы на карте</h2>
+        <p class="map-copy" data-i18n="mapDesc">Выберите филиал, чтобы открыть его в 2ГИС.</p>
+        <div class="map-branches" id="map-branches"></div>
+        <span class="map-foot">ASTANA · GOLDEN COFFEE</span>
+      </div>
+    </div>
+
+    <div class="map-modal contact-modal" id="contact-modal" aria-hidden="true">
+      <button class="map-backdrop" type="button" data-close aria-label="Закрыть окно"></button>
+      <div class="map-card contact-card" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <button class="map-close" type="button" data-close aria-label="Закрыть">✕</button>
+        <p class="eyebrow" data-i18n="contactEyebrow">ОСТАЛИСЬ ВОПРОСЫ?</p>
+        <h2 id="contact-modal-title" data-i18n="contactTitle">Мы на связи</h2>
+        <p class="map-copy" data-i18n="contactModalDesc">Выберите удобный способ связаться с нами.</p>
+        <div class="map-branches">
+          <a class="map-link" href="https://wa.me/77028437803" target="_blank" rel="noopener noreferrer">
+            <span class="map-icon"><img src="assets/whatico.webp" alt="WhatsApp" width="26" height="26" loading="lazy" decoding="async"></span>
+            <span class="map-label"><strong data-i18n="foodWhatsapp">Доставка блюд</strong><small>+7 702 843 78 03</small></span>
+            <span class="map-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="map-link" href="https://wa.me/77471602997" target="_blank" rel="noopener noreferrer">
+            <span class="map-icon"><img src="assets/whatico.webp" alt="WhatsApp" width="26" height="26" loading="lazy" decoding="async"></span>
+            <span class="map-label"><strong data-i18n="coffeeWhatsapp">Кофейня WhatsApp</strong><small>+7 747 160 29 97</small></span>
+            <span class="map-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="map-link" href="tel:+77714669850">
+            <span class="map-icon tel-icon" aria-hidden="true">☎</span>
+            <span class="map-label"><strong data-i18n="callUs">Позвонить нам</strong><small>+7 771 466 98 50</small></span>
+            <span class="map-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <span class="map-foot">ASTANA · GOLDEN COFFEE</span>
+      </div>
+    </div>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-wrap">
+        <p class="eyebrow" data-i18n="contactEyebrow">ОСТАЛИСЬ ВОПРОСЫ?</p>
+        <h2 id="contact-title" data-i18n="contactTitle">Мы на связи</h2>
+        <a class="contact-phone" href="tel:+77714669850">+7 771 466 98 50</a>
+        <div class="contact-links">
+          <a href="https://wa.me/77028437803" target="_blank" rel="noopener noreferrer"><span data-i18n="foodWhatsapp">Доставка блюд</span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+          <a href="https://wa.me/77471602997" target="_blank" rel="noopener noreferrer"><span data-i18n="coffeeWhatsapp">Кофейня WhatsApp</span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner section-wrap">
+      <a class="brand footer-brand" href="#home">
+        <img class="brand-icon" src="assets/icon.webp" alt="" width="34" height="34" loading="lazy" decoding="async">
+        <span>GOLDEN<br><b>COFFEE</b></span>
+      </a>
+      <span data-i18n="footer">Кофейня и кухня в Астане</span>
+      <span>© <span id="year">2026</span> GOLDEN COFFEE</span>
+    </div>
+  </footer>
+</body>
+</html>
