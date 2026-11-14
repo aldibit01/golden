@@ -288,6 +288,7 @@ const translations = {
     navLocations: 'Филиалы',
     navMap: 'Карта',
     navContact: 'Контакты',
+    navInstagram: 'Instagram',
     language: 'Язык',
     order: 'Заказать',
     heroEyebrow: 'КОФЕЙНЯ · КУХНЯ · АСТАНА',
@@ -322,6 +323,7 @@ const translations = {
     navLocations: 'Филиалдар',
     navMap: 'Карта',
     navContact: 'Байланыс',
+    navInstagram: 'Instagram',
     language: 'Тіл',
     order: 'Тапсырыс беру',
     heroEyebrow: 'КОФЕЙНЯ · АСХАНА · АСТАНА',
@@ -356,6 +358,7 @@ const translations = {
     navLocations: 'Locations',
     navMap: 'Map',
     navContact: 'Contact',
+    navInstagram: 'Instagram',
     language: 'Language',
     order: 'Order',
     heroEyebrow: 'COFFEE · KITCHEN · ASTANA',
@@ -573,7 +576,25 @@ function setMenuOpen(open) {
 menuToggle?.addEventListener('click', () => setMenuOpen(!nav.classList.contains('open')));
 navClose?.addEventListener('click', () => setMenuOpen(false));
 
-$$('.main-nav a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+$$('.main-nav a').forEach(link => link.addEventListener('click', event => {
+  setMenuOpen(false);
+  const targetId = link.getAttribute('href')?.slice(1);
+  const target = targetId && document.getElementById(targetId);
+  if (!target) return;
+  event.preventDefault();
+  (target.querySelector('.section-heading') || target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  history.replaceState(null, '', `#${targetId}`);
+}));
+
+$$('.hero-buttons a[href="#menu"], .hero-buttons a[href="#locations"]').forEach(link => {
+  link.addEventListener('click', event => {
+    const target = document.getElementById(link.hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    (target.querySelector('.section-heading') || target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', link.hash);
+  });
+});
 
 document.addEventListener('click', event => {
   if (!nav || !nav.classList.contains('open')) return;
